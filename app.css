@@ -114,6 +114,19 @@ body {
   &.carousel--marker {
     scroll-marker-group: after;
 
+    /* ------------------------------- */
+    /* Carousel - marker mode multiple */
+    &.carousel--marker--multiple {
+      & > .carousel__item::scroll-marker {
+        display: none;
+      }
+
+      & > .carousel__item:nth-last-of-type(4n)::scroll-marker {
+        display: block;
+      }
+    }
+    /* ------------------------------- */
+
     &::scroll-marker-group {
       display: flex;
       height: 1.5rem;
