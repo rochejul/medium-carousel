@@ -105,6 +105,11 @@ body {
     scroll-snap-align: center;
   }
 
+  /* Carousel - global config */
+  &.carousel-hide-scrollbar {
+    scrollbar-width: none;
+  }
+
   /* Carousel - button mode */
   &.carousel--button,
   &:not(.carousel--button) {
