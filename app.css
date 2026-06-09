@@ -110,9 +110,46 @@ body {
     scrollbar-width: none;
   }
 
+  /* Carousel - marker mode */
+  &.carousel--marker {
+    scroll-marker-group: after;
+
+    &::scroll-marker-group {
+      display: flex;
+      height: 1.5rem;
+      content: counter(markers);
+      gap: 0.5rem;
+      justify-content: center;
+      left: calc(anchor(left) + 4rem);
+      overflow: auto; /* Allow scrolling if too many scroll markers are inserted. */
+      position: absolute;
+      position-anchor: auto;
+      right: calc(anchor(right) + 4rem);
+      top: calc(anchor(bottom) + 1rem);
+    }
+
+    & > .carousel__item:has(::scroll-marker:target-current) {
+      border-color: red;
+    }
+
+    & > .carousel__item::scroll-marker {
+      background: lightgrey;
+      border: 1px solid black;
+      border-radius: 1rem;
+      content: '';
+      height: 1rem;
+      width: 1rem;
+    }
+
+    & > .carousel__item::scroll-marker:target-current {
+      /* For some reason, it seems it doesn't like the nested rules */
+      background: red;
+    }
+  }
+
   /* Carousel - button mode */
   &.carousel--button,
-  &:not(.carousel--button) {
+  &:not(.carousel--button, .carousel--marker) {
     &::scroll-button(left) {
       content: '⬅' / 'Scroll Left';
       left: calc(anchor(left) + 1rem);
