@@ -1,0 +1,25 @@
+{
+  "name": "medium-carousel",
+  "version": "1.0.0",
+  "description": "Repository used to illustrate [the Medium article](https://medium.com/@rochejul/carousel-css-api-a-s-1eb329e25e66) showing how to use the Carousel CSS api.",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "http-server --port 8080"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rochejul/medium-carousel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rochejul/medium-carousel/issues"
+  },
+  "homepage": "https://github.com/rochejul/medium-carousel#readme"
+}
