@@ -105,5 +105,33 @@ body {
     scroll-snap-align: center;
   }
 
+  /* Carousel - button mode */
+  &.carousel--button,
+  &:not(.carousel--button) {
+    &::scroll-button(left) {
+      content: '⬅' / 'Scroll Left';
+      left: calc(anchor(left) + 1rem);
+      position: absolute;
+      position-anchor: auto;
+      top: calc(anchor(bottom) + 0.75rem);
+    }
+
+    &::scroll-button(right) {
+      content: '⮕' / 'Scroll Right';
+      right: calc(anchor(right) + 1rem);
+      position: absolute;
+      position-anchor: auto;
+      top: calc(anchor(bottom) + 0.75rem);
+    }
+
+    &::scroll-button(*) {
+      border-radius: 1rem;
+
+      &:focus-visible {
+        outline-offset: 0.5rem;
+      }
+    }
+  }
+
   /* ---------------------------------------------------------- */
 }
